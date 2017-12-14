@@ -4,26 +4,51 @@
     <meta charset="UTF-8">
     <title>Photo viewer</title>
     <style type="text/css">
-        .contain {
+        .main {
+            margin: 0px;
+        }
+        .container {
+        }
+        .contents {
             width:auto;
             height:auto;
             max-width:100%;
             max-height:100%;
         }
         .operation-area {
+            position: fixed;
+            z-index: 100;
+            bottom: 0px;
+            width: 100%;
+            text-align: center;
+        }
+        .cen {
             text-align: center;
         }
     </style>
     <link href="./font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        function fastBackward() {
+        }
+        function backward(){
+            $("#image-area").attr("src", "amano.jpg");
+        }
+        function forward(){
+        }
+        function fastForward(){
+        }
+    </script>
 </head>
-<body>
+<body class="main">
     <h2 id="title_field"/>
-    <img id="image_area" src="amano.jpg" class="contain"/>
+    <div class="container" id="container">
+        <img id="image-area" src="" class="contents"/>
+    </div>
     <div class="operation-area">
-        <i class="fa fa-fast-backward" aria-hidden="true"></i>
-        <i class="fa fa-backward" aria-hidden="true"></i>
-        <i class="fa fa-forward" aria-hidden="true"></i>
-        <i class="fa fa-fast-forward" aria-hidden="true"></i>
+        <button class="fa fa-fast-backward" aria-hidden="true" id="fast-backward" onClick="fastBackward();"></button>
+        <button class="fa fa-backward" aria-hidden="true" id="backward" onClick="backward()"></button>
+        <button class="fa fa-forward" aria-hidden="true" id="forward" onClick="forward();"></button>
+        <button class="fa fa-fast-forward" aria-hidden="true" id="fast-forward" onClick="fastForward()"></button>
     </p>
     </div>
 </body>
